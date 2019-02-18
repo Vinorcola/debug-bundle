@@ -14,8 +14,8 @@ namespace Symfony\Bundle\DebugBundle\Command;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
-use Symfony\Component\Console\Style\SymfonyStyle;
 use Symfony\Component\VarDumper\Command\ServerDumpCommand;
+use Symfony\Component\VarDumper\Command\UpdatedSymfonyStyle;
 use Symfony\Component\VarDumper\Server\DumpServer;
 
 /**
@@ -45,7 +45,7 @@ class ServerDumpPlaceholderCommand extends Command
 
     protected function execute(InputInterface $input, OutputInterface $output)
     {
-        (new SymfonyStyle($input, $output))->getErrorStyle()->warning('In order to use the VarDumper server, set the "debug.dump_destination" config option to "tcp://%env(VAR_DUMPER_SERVER)%"');
+        (new UpdatedSymfonyStyle($input, $output))->getErrorStyle()->warning('In order to use the VarDumper server, set the "debug.dump_destination" config option to "tcp://%env(VAR_DUMPER_SERVER)%"');
 
         return 8;
     }
