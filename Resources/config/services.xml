@@ -9,8 +9,6 @@
     </parameters>
 
     <services>
-        <defaults public="false" />
-
         <service id="twig.extension.dump" class="Symfony\Bridge\Twig\Extension\DumpExtension">
             <tag name="twig.extension" />
             <argument type="service" id="var_dumper.cloner" />
@@ -57,7 +55,7 @@
                 <argument type="service" key="source">
                     <service class="Symfony\Component\VarDumper\Dumper\ContextProvider\SourceContextProvider">
                         <argument>%kernel.charset%</argument>
-                        <argument type="string">%kernel.project_dir%</argument>
+                        <argument type="string">%kernel.root_dir%/..</argument>
                         <argument type="service" id="debug.file_link_formatter" on-invalid="null" />
                     </service>
                 </argument>

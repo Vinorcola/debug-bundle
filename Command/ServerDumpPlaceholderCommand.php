@@ -33,7 +33,7 @@ class ServerDumpPlaceholderCommand extends Command
     {
         $this->replacedCommand = new ServerDumpCommand((new \ReflectionClass(DumpServer::class))->newInstanceWithoutConstructor(), $descriptors);
 
-        parent::__construct();
+        parent::__construct('server:dump');
     }
 
     protected function configure()
