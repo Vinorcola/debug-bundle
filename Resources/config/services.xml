@@ -15,7 +15,7 @@
             <argument type="service" id="var_dumper.html_dumper" />
         </service>
 
-        <service id="data_collector.dump" class="Symfony\Component\HttpKernel\DataCollector\DumpDataCollector" public="true">
+        <service id="data_collector.dump" class="Symfony\Bundle\DebugBundle\DataCollector\DumpDataCollector" public="true">
             <tag name="data_collector" id="dump" template="@Debug/Profiler/dump.html.twig" priority="240" />
             <argument type="service" id="debug.stopwatch" on-invalid="ignore" />
             <argument type="service" id="debug.file_link_formatter" on-invalid="ignore"></argument>
